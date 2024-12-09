@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
+                // Crear una instancia del fragmento y pasar el texto mediante un Bundle
                 BlankFragment fragment = new BlankFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString("texto", editText.getText().toString());
@@ -47,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                fragmentTransaction.replace(R.id.fragmentContainerView, fragment);
+                // Usar add para agregar el fragmento al contenedor cada vez que se presione el botón
+                fragmentTransaction.add(R.id.fragmentContainerView, fragment);
+
                 fragmentTransaction.commit();
 
 
