@@ -64,26 +64,22 @@ public class BlankFragment extends Fragment {
 
     }
 
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_blank, container, false);
 
         TextView textView = view.findViewById(R.id.textView);
 
-        // Recuperar el texto del Bundle y actualizar el TextView
-        if (getArguments() != null) {
+
             String text = getArguments().getString("texto", "");
             textView.setText(text);
-        }
+
 
         return view;
     }
 
 
-    public void updateText(String newText) {
-        if (textFragment != null) {
-            textFragment.setText(newText);
-        }
-    }
+
 
 }
